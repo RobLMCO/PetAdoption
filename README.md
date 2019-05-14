@@ -19,7 +19,9 @@ This set of interactive visualizations will tell a story about Pet Adoption in M
 supported by a 10 minute presentation.
 
 Search dropdown / text box - Rob
+
 Mapbox plot - Mike
+
 Presentation - Lillian
 
 1) Adoptions per postcode mapped (by criteria) - hover for total data (number by breeds and adoptions)
