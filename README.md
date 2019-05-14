@@ -29,7 +29,10 @@ Mapbox plot - Mike
 Presentation - Lillian
 
 1) Adoptions per postcode mapped (by criteria) - hover for total data (number by breeds and adoptions)
-2) Postcode bubble chart  / bar graph - colors (Lillian), breeds (Mike), gender (Rob) 
+2) Postcode bubble chart  / bar graph - colors (Lillian), breeds (Mike), adoption rate (Rob) 
 
 Three pages to tell the story, each linked with an arrow button to advance to the next interactive
-visualization.
+visualization. The story will reveal where the most popular breeds and colors are adopted the quickest across Malaysia. 
+
+As an animal fostering agency, we require The Pet Adoption service to identify the best locations in Malaysia 
+that will ensure quick adoption, depending on its breed and color.
