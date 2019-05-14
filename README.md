@@ -13,3 +13,6 @@ In order to do this, we will need to extract the postcode and utilize a geocode 
 retrieve the coordinates to plot on a mapbox map using Leaflet. 
 Our API will also provide the use of a dropdown list to sort the data by at least three
 criteria and provide a simple plot of the search results using CanvasJS.
+
+This sets of interactive visualizations will tell a story about Pet Adoption in Malaysia, 
+supported by a 10 minute presentation.
