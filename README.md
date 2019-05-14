@@ -1,4 +1,4 @@
-# PetAdoption
+# Pet Adoption
 
 Team BAM: Lillian Bolfer, Andrew Michael Machata, Robbie Phillips
 
