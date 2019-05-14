@@ -11,8 +11,15 @@ characteristics (i.e. breed, color), and plot the results on a map of Malaysia.
 
 In order to do this, we will need to extract the postcode and utilize a geocode API to
 retrieve the coordinates to plot on a mapbox map using Leaflet. 
-Our API will also provide the use of a dropdown list to sort the data by at least three
-criteria and provide a simple plot of the search results using CanvasJS.
+Our API will also provide the use of a dropdown list (for color) or a search text box 
+(for breed) to sort the data by at least three criteria and provide a simple plot of the 
+search results using CanvasJS.
 
-This sets of interactive visualizations will tell a story about Pet Adoption in Malaysia, 
+This set of interactive visualizations will tell a story about Pet Adoption in Malaysia, 
 supported by a 10 minute presentation.
+
+1) Adoptions per postcode mapped (by criteria) - hover for total data (number by breeds and adoptions)
+2) Postcode bubble chart  / bar graph - colors, breeds, gender 
+
+Three pages to tell the story, each linked with an arrow button to advance to the next interactive
+visualization.
