@@ -9,6 +9,10 @@ Using the same dataset, our team plans to provide an API and server (via Flask o
 which will allow pet adoption data to be retieved from an SQLlite file (Lillian), be sorted by pet 
 characteristics (i.e. breed, color), and plot the results on a map of Malaysia.
 
+- Lillian extracts data from CSV files and populates tables in an SQLlite file
+- Mike extract the postcode data from the CSV file and store coordinate data for the 15 postcodes via Geocode API
+- Rob retrieves the data from the SQLlite file, sort by Javascript dropbox and display on a page
+
 In order to do this, we will need to extract the postcode and utilize a geocode API (Mike) to
 retrieve the coordinates to plot on a mapbox map using Leaflet. 
 Our API will also provide the use of a dropdown list (for color) or a search text box 
