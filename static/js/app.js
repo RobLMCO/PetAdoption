@@ -14,7 +14,7 @@ function init() {
 
   console.log("Initialising...")
 
-  var selector = d3.select("#selDataset");
+  var selector =document.getElementById("selDataset");
   Plotly.d3.json("/Adoptions",function(error,response){
     if(error) console.warn(error);
     var dropdown_select = Plotly.d3.select("#selDataset");
@@ -28,28 +28,45 @@ function init() {
 }
 
 function buildMetadata(sample) {
-  console.log("Building metadata... ")
-  console.log("sample:  " + sample)
-
-  var url="/metadata/"+sample;
+  var selector = document.getElementById("selDataset");
+  console.log("Fetching metadata... ")
+  var slider = document.getElementById("myRange");
+  if (sample == slider.value) {
+    console.log("sample: " + selector.value + "," + sample);
+    var url="/metadata/" + selector.value + "," + sample;
+  } 
+  else 
+  {
+      console.log("sample: " + sample + "," + slider.value);
+      var url="/metadata/" + sample + "," + slider.value;
+  };
 
   console.log(url);
   d3.json(url).then(function(response){
     try {
-      console.log("Throwing Error...");
-      throw({message:"Ouch!"});
+      console.log("API error");
+      throw({message:"API error"});
   } catch(e) {
     console.log(response);
     var metadata_Sample= d3.select("#sample-metadata");
+    var attribute_value;
     metadata_Sample.selectAll("p").remove();
-    
-
+    adoption_filter = [];
+    filter_label = ["Attribute", "Total", "Value"];
     for(var key in response){
         if(response.hasOwnProperty(key)){
-            metadata_Sample.append("p").text(key + ":   " + response[key]);
+            if (key == 2){
+              attribute_value = Math.round(response[key] / (14993 / response[key - 1]));
+              metadata_Sample.append("p").text(filter_label[key] + ":   " + attribute_value);
+              adoption_filter[key] = attribute_value;
+            } else {
+            metadata_Sample.append("p").text(filter_label[key] + ":   " + response[key]);
+            adoption_filter[key] = response[key];
+            };
         } 
     }
-    console.log("End of metadata")
+    console.log(adoption_filter);
+    console.log("End of metadata");
     buildGauge(response.WFREQ);
   }
 }, 500);
@@ -139,9 +156,14 @@ function optionChanged(newSample) {
  
   var output = document.getElementById("sample");
   var slider = document.getElementById("myRange");
-  output.innerHTML = slider.value; // Display the default slider value
+  var selector = document.getElementById("selDataset");
+  var slidervalue = slider.value;
+  output.innerHTML = slidervalue; // Display the default slider value
   console.log("optionchanged detected and new sample selected")
-  console.log("new sample: " + newSample )
+  if (newSample == slidervalue) {
+    console.log("new sample: " + selector.value + "," + newSample)} 
+  else console.log("new sample: " + newSample + "," + slider.value);
+  
   buildMetadata(newSample);
 
   // Plot the updated pie chart
@@ -157,13 +179,13 @@ window.onload = function () {
     animationEnabled: true,
     theme: "light2",
     title: {
-      text: "Monthly Sales Data"
+      text: "Pet Adoption Data By Area"
     },
     axisX: {
-      valueFormatString: "MMM"
+      valueFormatString: "######"
     },
     axisY: {
-      prefix: "$",
+      prefix: "",
       labelFormatter: addSymbols
     },
     toolTip: {
@@ -176,65 +198,74 @@ window.onload = function () {
     data: [
     {
       type: "column",
-      name: "Actual Sales",
+      name: "Adoptions",
       showInLegend: true,
-      xValueFormatString: "MMMM YYYY",
+      xValueFormatString: "######",
       yValueFormatString: "$#,##0",
       dataPoints: [
-        { x: new Date(2016, 0), y: 20000 },
-        { x: new Date(2016, 1), y: 30000 },
-        { x: new Date(2016, 2), y: 25000 },
-        { x: new Date(2016, 3), y: 70000, indexLabel: "High Renewals" },
-        { x: new Date(2016, 4), y: 50000 },
-        { x: new Date(2016, 5), y: 35000 },
-        { x: new Date(2016, 6), y: 30000 },
-        { x: new Date(2016, 7), y: 43000 },
-        { x: new Date(2016, 8), y: 35000 },
-        { x: new Date(2016, 9), y:  30000},
-        { x: new Date(2016, 10), y: 40000 },
-        { x: new Date(2016, 11), y: 50000 }
+        { x: 02, y: 20000, indexLabel: "Perlis" },
+        { x: 08, y: 30000, indexLabel: "Kedah" },
+        { x: 13, y: 25000, indexLabel: "Palau Pinor" },
+        { x: 18, y: 70000, indexLabel: "Kelantan" },
+        { x: 23, y: 50000, indexLabel: "Terengganu" },
+        { x: 27, y: 35000, indexLabel: "Pahang"  },
+        { x: 30, y: 30000, indexLabel: "Perak"  },
+        { x: 48, y: 43000, indexLabel: "Selangor"  },
+        { x: 50, y: 35000, indexLabel: "Kuala Lumpur"  },
+        { x: 72, y: 30000, indexLabel: "Negeri Sembilan"  },
+        { x: 78, y: 40000, indexLabel: "Melaka"  },
+        { x: 86, y: 50000, indexLabel: "Johor"  },
+        { x: 87, y: 25000, indexLabel: "Labuan"  },
+        { x: 90, y: 12500, indexLabel: "Sabah"  },
+        { x: 96, y: 45000, indexLabel: "Sarawak"  }
       ]
     }, 
     {
       type: "line",
-      name: "Expected Sales",
+      name: "Attribute",
       showInLegend: true,
       yValueFormatString: "$#,##0",
       dataPoints: [
-        { x: new Date(2016, 0), y: 40000 },
-        { x: new Date(2016, 1), y: 42000 },
-        { x: new Date(2016, 2), y: 45000 },
-        { x: new Date(2016, 3), y: 45000 },
-        { x: new Date(2016, 4), y: 47000 },
-        { x: new Date(2016, 5), y: 43000 },
-        { x: new Date(2016, 6), y: 42000 },
-        { x: new Date(2016, 7), y: 43000 },
-        { x: new Date(2016, 8), y: 41000 },
-        { x: new Date(2016, 9), y: 45000 },
-        { x: new Date(2016, 10), y: 42000 },
-        { x: new Date(2016, 11), y: 50000 }
+        { x: 02, y: 40000 },
+        { x: 08, y: 42000 },
+        { x: 13, y: 45000 },
+        { x: 18, y: 45000 },
+        { x: 23, y: 47000 },
+        { x: 27, y: 43000 },
+        { x: 30, y: 42000 },
+        { x: 48, y: 43000 },
+        { x: 50, y: 41000 },
+        { x: 72, y: 45000 },
+        { x: 78, y: 42000 },
+        { x: 86, y: 50000 },
+        { x: 87, y: 46000 },
+        { x: 90, y: 43500 },
+        { x: 96, y: 44000 }
       ]
     },
     {
       type: "area",
-      name: "Profit",
+      name: "Average Adoption Speed",
       markerBorderColor: "white",
       markerBorderThickness: 2,
       showInLegend: true,
       yValueFormatString: "$#,##0",
       dataPoints: [
-        { x: new Date(2016, 0), y: 5000 },
-        { x: new Date(2016, 1), y: 7000 },
-        { x: new Date(2016, 2), y: 6000},
-        { x: new Date(2016, 3), y: 30000 },
-        { x: new Date(2016, 4), y: 20000 },
-        { x: new Date(2016, 5), y: 15000 },
-        { x: new Date(2016, 6), y: 13000 },
-        { x: new Date(2016, 7), y: 20000 },
-        { x: new Date(2016, 8), y: 15000 },
-        { x: new Date(2016, 9), y:  10000},
-        { x: new Date(2016, 10), y: 19000 },
-        { x: new Date(2016, 11), y: 22000 }
+        { x: 02, y: 40000 },
+        { x: 08, y: 42000 },
+        { x: 13, y: 45000 },
+        { x: 18, y: 45000 },
+        { x: 23, y: 47000 },
+        { x: 27, y: 43000 },
+        { x: 30, y: 42000 },
+        { x: 48, y: 43000 },
+        { x: 50, y: 41000 },
+        { x: 72, y: 45000 },
+        { x: 78, y: 42000 },
+        { x: 86, y: 50000 },
+        { x: 87, y: 46000 },
+        { x: 90, y: 43500 },
+        { x: 96, y: 44000 }
       ]
     }]
   });
