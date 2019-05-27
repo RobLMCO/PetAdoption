@@ -1,9 +1,9 @@
 /*
  BONUS 
 */
-function buildGauge(wfreq) {
+function buildGauge(rate) {
 
-  var level = parseFloat(wfreq) * 20;
+  var level = parseFloat(rate) * 20;
 
   var degrees = 180 - level;
   var radius = 0.5;
@@ -11,7 +11,7 @@ function buildGauge(wfreq) {
   var x = radius * Math.cos(radians);
   var y = radius * Math.sin(radians);
 
-  var mainPath = "M -.0 -0.05 L .0 0.05 L ";
+  var mainPath = "M +.0 +0.5 L -.0 -0.5 L ";
   var pathX = String(x);
   var space = " ";
   var pathY = String(y);
@@ -32,7 +32,7 @@ function buildGauge(wfreq) {
     {
       values: [50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50],
       rotation: 90,
-      text: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
+      text: ["0.5", "1.0", "1.5", "2.0", "2.5", "3.0", "3.5", "4.0", "4.5", ""],
       textinfo: "text",
       textposition: "inside",
       marker: {
@@ -49,7 +49,7 @@ function buildGauge(wfreq) {
           "rgba(255, 255, 255, 0)"
         ]
       },
-      labels: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
+      labels: ["0.5", "1.0", "1.5", "2.0", "2.5", "3.0", "3.5", "4.0", "4.5", ""],
       hoverinfo: "label",
       hole: 0.5,
       type: "pie",
@@ -68,7 +68,7 @@ function buildGauge(wfreq) {
         }
       }
     ],
-    title: "<b>Belly Wash Frequency</b> <br> Scrubs per Week",
+    title: "<b>Adoption Rate</b> <br> Days",
     height: 420,
     width: 420,
     xaxis: {
