@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+      text: "Adoptions by Color"
+      },
+
+      axisX: {
+      title: "Cities in Malaysia"
+      },
+
+      axisY:{
+      title: "Number of Adoptions",
+      tickColor: "#B6B1A8"
+      },
+        data: [
+      {
+        type: "stackedColumn",
+        showInLegend: true,
+        name: "Black",
+        dataPoints: [
+
+        { y: 53, label: "Melaka" },
+        { y: 63, label: "Kedah" },
+        { y: 4351, label: "Selangor" },
+        { y: 415, label: "Pulau Pinang" },
+        { y: 209, label:"Perak" },
+        { y: 128, label: "Negeri Sembilan" },
+        { y: 47, label: "Panhang" },
+        { y: 248, label: "Johor" },
+        { y: 11, label: "Sarawak" },
+        { y: 9, label: "Sabah" },
+        { y: 7, label: "Terengganu" },
+        { y: 6, label: "Kelantan" },
+        { y: 1880, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+
+
+        ]
+      },  {
+        type: "stackedColumn",
+        name: "Brown",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 45, label: "Melaka" },
+        { y: 22, label: "Kedah" },
+        { y: 2241, label: "Selangor" },
+        { y: 231, label: "Pulau Pinang" },
+        { y: 118, label:"Perak" },
+        { y: 63, label: "Negeri Sembilan" },
+        { y: 17, label: "Panhang" },
+        { y: 120, label: "Johor" },
+        { y: 1, label: "Sarawak" },
+        { y: 6, label: "Sabah" },
+        { y: 4, label: "Terengganu" },
+        { y: 3, label: "Kelantan" },
+        { y: 879, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+
+        ]
+      }, {
+        type: "stackedColumn",
+        name: "Golden",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 9, label: "Melaka" },
+        { y: 12, label: "Kedah" },
+        { y: 550, label: "Selangor" },
+        { y: 41, label: "Pulau Pinang" },
+        { y: 17, label:"Perak" },
+        { y: 10, label: "Negeri Sembilan" },
+        { y: 3, label: "Panhang" },
+        { y: 27, label: "Johor" },
+        { y: 0, label: "Sarawak" },
+        { y: 0, label: "Sabah" },
+        { y: 4, label: "Terengganu" },
+        { y: 0, label: "Kelantan" },
+        { y: 273, label: "Kuala Lumpur" },
+        { y: 7, label: "Labuan"}
+
+        ]
+
+      }, {
+        type: "stackedColumn",
+        name: "Yellow",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 5, label: "Melaka" },
+        { y: 1, label: "Kedah" },
+        { y: 294, label: "Selangor" },
+        { y: 32, label: "Pulau Pinang" },
+        { y: 13, label:"Perak" },
+        { y: 12, label: "Negeri Sembilan" },
+        { y: 3, label: "Panhang" },
+        { y: 29, label: "Johor" },
+        { y: 1, label: "Sarawak" },
+        { y: 5, label: "Sabah" },
+        { y: 5, label: "Terengganu" },
+        { y: 0, label: "Kelantan" },
+        { y: 234, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+
+        ]
+
+      }, {
+        type: "stackedColumn",
+        name: "Cream",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 8, label: "Melaka" },
+        { y: 7, label: "Kedah" },
+        { y: 525, label: "Selangor" },
+        { y: 48, label: "Pulau Pinang" },
+        { y: 37, label:"Perak" },
+        { y: 19, label: "Negeri Sembilan" },
+        { y: 3, label: "Panhang" },
+        { y: 27, label: "Johor" },
+        { y: 0, label: "Sarawak" },
+        { y: 0, label: "Sabah" },
+        { y: 2, label: "Terengganu" },
+        { y: 2, label: "Kelantan" },
+        { y: 204, label: "Kuala Lumpur" },
+        { y: 2, label: "Labuan"}
+
+        ]
+
+      }, {
+        type: "stackedColumn",
+        name: "Gray",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 5, label: "Melaka" },
+        { y: 2, label: "Kedah" },
+        { y: 380, label: "Selangor" },
+        { y: 30, label: "Pulau Pinang" },
+        { y: 15, label:"Perak" },
+        { y: 10, label: "Negeri Sembilan" },
+        { y: 3, label: "Panhang" },
+        { y: 26, label: "Johor" },
+        { y: 0, label: "Sarawak" },
+        { y: 2, label: "Sabah" },
+        { y: 4, label: "Terengganu" },
+        { y: 1, label: "Kelantan" },
+        { y: 206, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+
+        ]
+        
+      }, {
+        type: "stackedColumn",
+        name: "White",
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 12, label: "Melaka" },
+        { y: 3, label: "Kedah" },
+        { y: 373, label: "Selangor" },
+        { y: 46, label: "Pulau Pinang" },
+        { y: 11, label:"Perak" },
+        { y: 11, label: "Negeri Sembilan" },
+        { y: 9, label: "Panhang" },
+        { y: 30, label: "Johor" },
+        { y: 0, label: "Sarawak" },
+        { y: 0, label: "Sabah" },
+        { y: 0, label: "Terengganu" },
+        { y: 3, label: "Kelantan" },
+        { y: 169, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+
+        ]
+
+      }
+
+      ]
+
+    });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+<body>
+  <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+</body>
+</html>
