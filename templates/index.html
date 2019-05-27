@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
     body {
-      background-color: antiquewhite;
+      background-color: white;
     }
 
     .jumbotron {
@@ -20,7 +20,7 @@
       height: 150%;
       margin: 0;
       padding: 0;
-      text-decoration-color: antiquewhite;
+      text-decoration-color: white;
     }
 
     #log-container { overflow: auto; height: 150px; }
@@ -94,16 +94,18 @@
 	</div>
     <div class="row">
       <div class="col-md-2">
-        <div class="well">
-          <img src="https://www.sciencefriday.com/wp-content/uploads/2018/05/ScienceFridayGIF-downsized_large28429.gif" style="width:100%; height:100%"></img>
-          <h5>SCAN Adoptions:</h5>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Query Adoptions</h3>
+            </div>
+          <img src="https://cdn-images-1.medium.com/max/1600/1*dgfd5JaT0d7JT4VfhFEnzg.gif" style="width:100%; height:100%; position:-webkit-sticky"></img>
+          <h5 style="text-align: center">SCAN Adoptions:</h5>
           <div class="slidecontainer">
             <input type="range" min="1" max="14993" value="1" class="slider" id="myRange" onchange="optionChanged(this.value)">
-            <div class="sample" id="sample"></div>
+            <div class="sample" id="sample" style="text-align: center"></div>
           </div>
-          <h5>FETCH Attribute:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-          <img src="https://i.gifer.com/QiIC.gif" style="width:50%; height:50%"></img> 
+          <h5 style="text-align: center">FETCH Attribute:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select> 
         </div>
       </div>
       <div class="col-md-2">
@@ -158,14 +160,7 @@ font-size: 22px;>
   <script type="text/javascript" src="static/js/app.js"></script>
   <script type="text/javascript" src="static/js/bonus.js"></script>
   
-  
-  <!--
-  <script src="{{ url_for('static', filename='js/carpe_slider.js') }}"></script>
-  <script>
-    !function(o){console.old=console.log,console.log=function(){var n,e,t="";for(e=0;e<arguments.length;e++)t+='<div id="notes"><span style="height:300px;width:700px;border:1px solid #ccc;font:16px/26px Georgia,Garamond,Serif;overflow-x:hidden;overflow-y:auto;background-color:#white" class="log-'+typeof(n=arguments[e])+'">',"object"==typeof n&&"object"==typeof JSON&&"function"==typeof JSON.stringify?t+=JSON.stringify(n):t+=n,t+="</span></div>;";o.innerHTML+=t+"<br>",console.old.apply(void 0,arguments)}}
-    (document.body); 
-  </script>
-  -->
+
 </body>
 
 </html>
