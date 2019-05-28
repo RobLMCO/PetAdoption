@@ -80,6 +80,12 @@ def Adoptions():
     # Return a list of the column adoptions 
     return jsonify(list(train_df.columns)[2:])
 
+@app.route("/api/v1.0")
+def API():
+    """Return API details."""
+
+    return jsonify("Welcome to the API Page!")
+
 @app.route("/api/v1.0/Colors")
 def Pet_Colors():
 
