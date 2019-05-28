@@ -75,10 +75,10 @@ var StateNames = [{
 }
 ];
 
-// Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
+// Loop through the StateNames array and create one marker for each State, bind a popup containing its name add it to the map
 for (var i = 0; i < StateNames.length; i++) {
   var StateName = StateNames[i];
-  L.marker(city.location)
-    .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
+  L.marker(StateName.location)
+    .bindPopup("<h1>" + StateName.name + "</h1>")
     .addTo(myMap);
 }
