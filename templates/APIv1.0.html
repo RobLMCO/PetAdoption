@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pet Adoption Analyzer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 style="color: rgb(85, 100, 238)"> Pet Adoption Analysis API</h1>
+        <h1></h1>
+        
+        
+        <h3 style="color: rgb(236, 13, 143)">Explore Data on Pet Adoption in Malaysia</h3>
+        <h2><a text-align: right; font-size: 24px; style="color: rgb(85, 100, 238)" href="https://petadoptions.herokuapp.com/">Return To Our Dashboard</a></h2>
+        <h1></h1>
+      </div>
+    </div>
+    
+	<div class="row">
+		<div class="col-md-12">
+        <br>
+        <p font-size: 24px;> Welcome to Version 1.0 of our API !</p><br>
+        <p>You can access our data for free, compliments of PetFinder.my</p><br>
+        <p><a href="https://github.com/RobLMCO/PetAdoption/blob/master/pet_adoptions.sqlite">You may download the SQLite file from here</a></p><br>
+        <p>Start your API session by requesting the Adoption data attributes so you know what is available</p>
+        <h4><a href="https://petadoptions.herokuapp.com/api/v1.0/Adoptions">/api/v1.0/Adoptions</a></h4>
+        <h5 style="white-space: pre-wrap;">["Age","Breed1","Breed2","Gender","Color1","Color2","Color3","MaturitySize","FurLength","Vaccinated","Dewormed","Sterilized","Health","Quantity","Fee","State","RescuerID","VideoAmt","Description","PetID","PhotoAmt","AdoptionSpeed"]</h5><br>
+        <p>Each attribute is added to the API path, followed by the sample number you want to retrieve</p>
+        <p>For example, to retrieve breed number 1:</p>
+        <h4><a href="https://petadoptions.herokuapp.com/api/v1.0/breed/1">/api/v1.0/breed/1</a></h4>
+        <h5 style="white-space: pre-wrap;">["Pet Breed:",[1],["Affenpinscher"]]</h5><br>
+        <p>To show all breeds:</p>
+        <h4><a href="https://petadoptions.herokuapp.com/api/v1.0/Breeds">/api/v1.0/Breeds</a></h4><br>
+        <p> The first number in the list is the total number of samples (i.e. there are 307 breeds broken into dogs and cats)</p>
+        <p> You can try the same for each attribute by Capitalizing the attribute name and making it plural (add an 's')</p>
+        <h4><a href="https://petadoptions.herokuapp.com/api/v1.0/Colors">/api/v1.0/Colors</a></h4>
+        <h5 style="white-space: pre-wrap;">["Pet Colors:","7",["Black","Brown","Golden","Yellow","Cream","Gray","White"]]</h5><br>
+
+
+		</div>
+	</div>
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+      <div class="col-md-2">
+        
+        <br>
+        <br>
+          </div>
+      </div>
+      <div class="col-md-4">
+        
+	  </div>
+      <div class="col-md-4">
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3"></div>
+    <div class="col-md-3">
+      
+    </div>
+  </div>	
+  
+<div  id="footer";
+background-color: skyblue; 
+position: absolute;
+bottom: 0;
+width: 100%; 
+height: 80px;
+padding-top: 10px;
+padding-bottom: 10px;
+text-align: center;
+font-size: 22px;>        
+  <div class="col-md-3"><a text-align: left; font-size: 24px; style="color: white" href="https://www.petfinder.my/">Adopt Pets Faster</a></div>
+  <div class="col-md-6">
+    
+    <img style="width: 400px" src="https://www.petfinder.my/images/logo-575x100.png"></img>
+    
+  </div>
+  <div class="col-md-3"><a text-align: right; font-size: 24px; style="color: white" href="https://www.petfinder.my/visualmap.htm">Visual Pet Map</a></div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+
+ 
+  
+
+</body>
+
+</html>
