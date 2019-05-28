@@ -8,11 +8,9 @@
       title:{
       text: "Adoptions by Color"
       },
-
       axisX: {
       title: "Cities in Malaysia"
       },
-
       axisY:{
       title: "Number of Adoptions",
       tickColor: "#B6B1A8"
@@ -22,8 +20,8 @@
         type: "stackedColumn",
         showInLegend: true,
         name: "Black",
+        color: 'black',
         dataPoints: [
-
         { y: 53, label: "Melaka" },
         { y: 63, label: "Kedah" },
         { y: 4351, label: "Selangor" },
@@ -38,12 +36,11 @@
         { y: 6, label: "Kelantan" },
         { y: 1880, label: "Kuala Lumpur" },
         { y: 0, label: "Labuan"}
-
-
         ]
       },  {
         type: "stackedColumn",
         name: "Brown",
+        color: 'brown',
         showInLegend: true,
          dataPoints: [
         
@@ -61,11 +58,11 @@
         { y: 3, label: "Kelantan" },
         { y: 879, label: "Kuala Lumpur" },
         { y: 0, label: "Labuan"}
-
         ]
       }, {
         type: "stackedColumn",
         name: "Golden",
+        color: 'gold',
         showInLegend: true,
          dataPoints: [
         
@@ -83,35 +80,11 @@
         { y: 0, label: "Kelantan" },
         { y: 273, label: "Kuala Lumpur" },
         { y: 7, label: "Labuan"}
-
         ]
-
-      }, {
-        type: "stackedColumn",
-        name: "Yellow",
-        showInLegend: true,
-         dataPoints: [
-        
-        { y: 5, label: "Melaka" },
-        { y: 1, label: "Kedah" },
-        { y: 294, label: "Selangor" },
-        { y: 32, label: "Pulau Pinang" },
-        { y: 13, label:"Perak" },
-        { y: 12, label: "Negeri Sembilan" },
-        { y: 3, label: "Panhang" },
-        { y: 29, label: "Johor" },
-        { y: 1, label: "Sarawak" },
-        { y: 5, label: "Sabah" },
-        { y: 5, label: "Terengganu" },
-        { y: 0, label: "Kelantan" },
-        { y: 234, label: "Kuala Lumpur" },
-        { y: 0, label: "Labuan"}
-
-        ]
-
       }, {
         type: "stackedColumn",
         name: "Cream",
+        color: 'beige',
         showInLegend: true,
          dataPoints: [
         
@@ -129,12 +102,11 @@
         { y: 2, label: "Kelantan" },
         { y: 204, label: "Kuala Lumpur" },
         { y: 2, label: "Labuan"}
-
         ]
-
       }, {
         type: "stackedColumn",
         name: "Gray",
+        color: 'grey',
         showInLegend: true,
          dataPoints: [
         
@@ -152,12 +124,12 @@
         { y: 1, label: "Kelantan" },
         { y: 206, label: "Kuala Lumpur" },
         { y: 0, label: "Labuan"}
-
         ]
         
       }, {
         type: "stackedColumn",
         name: "White",
+        color: 'white',
         showInLegend: true,
          dataPoints: [
         
@@ -175,15 +147,32 @@
         { y: 3, label: "Kelantan" },
         { y: 169, label: "Kuala Lumpur" },
         { y: 0, label: "Labuan"}
-
         ]
-
+      }, {
+        type: "stackedColumn",
+        name: "Yellow",
+        color: 'yellow',
+        showInLegend: true,
+         dataPoints: [
+        
+        { y: 5, label: "Melaka" },
+        { y: 1, label: "Kedah" },
+        { y: 294, label: "Selangor" },
+        { y: 32, label: "Pulau Pinang" },
+        { y: 13, label:"Perak" },
+        { y: 12, label: "Negeri Sembilan" },
+        { y: 3, label: "Panhang" },
+        { y: 29, label: "Johor" },
+        { y: 1, label: "Sarawak" },
+        { y: 5, label: "Sabah" },
+        { y: 5, label: "Terengganu" },
+        { y: 0, label: "Kelantan" },
+        { y: 234, label: "Kuala Lumpur" },
+        { y: 0, label: "Labuan"}
+        ]
       }
-
       ]
-
     });
-
     chart.render();
   }
   </script>
