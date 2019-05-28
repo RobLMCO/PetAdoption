@@ -4,7 +4,7 @@ var output = document.getElementById("sample");
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
-  output.innerHTML = this.value;
+  //output.innerHTML = this.value;
   optionChanged(this.value);
   //console.log(this.value);
 }
@@ -52,7 +52,7 @@ function buildMetadata(sample) {
     var attribute_value;
     metadata_Sample.selectAll("p").remove();
     adoption_filter = [];
-    filter_label = ["Attribute", "Total", "Value"];
+    filter_label = ["Attribute", "Total Samples", "Sample#"];
     for(var key in response){
         if(response.hasOwnProperty(key)){
             if (key == 2){
@@ -72,18 +72,198 @@ function buildMetadata(sample) {
 }, 500);
 }  
     
+function Colorchart(sample){
+  var colorchart = new CanvasJS.Chart("colorchartContainer",
+    {
+      animationEnabled: true,
+      theme: "light2",
+      title:{
+      text: "Adoptions by Color"
+      },
+      axisX: {
+      title: "Postal Area Names in Malaysia"
+      },
+      axisY:{
+      title: "Number of Adoptions",
+      tickColor: "#B6B1A8"
+      },
+        data: [
+      {
+        type: "stackedColumn",
+        showInLegend: true,
+        name: "Black",
+        color: 'black',
+        dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 63, label: "Kedah" },
+        { y: 415, label: "Pulau Pinang" },
+        { y: 6, label: "Kelantan" },
+        { y: 7, label: "Terengganu" },
+        { y: 47, label: "Pahang" },
+        { y: 209, label:"Perak" },
+        { y: 4351, label: "Selangor" },
+        { y: 1880, label: "Kuala Lumpur" },
+        { y: 128, label: "Negeri Sembilan" },
+        { y: 53, label: "Melaka" },
+        { y: 248, label: "Johor" },
+        { y: 0, label: "Labuan"},
+        { y: 9, label: "Sabah" },
+        { y: 11, label: "Sarawak" }
+        ]
+      },  {
+        type: "stackedColumn",
+        name: "Brown",
+        color: 'brown',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 22, label: "Kedah" },
+        { y: 231, label: "Pulau Pinang" },
+        { y: 3, label: "Kelantan" },
+        { y: 4, label: "Terengganu" },
+        { y: 17, label: "Pahang" },
+        { y: 118, label:"Perak" },
+        { y: 2241, label: "Selangor" },
+        { y: 879, label: "Kuala Lumpur" },
+        { y: 63, label: "Negeri Sembilan" },
+        { y: 45, label: "Melaka" },
+        { y: 120, label: "Johor" },
+        { y: 0, label: "Labuan"},
+        { y: 6, label: "Sabah" },
+        { y: 1, label: "Sarawak" }
+        ]
+      }, {
+        type: "stackedColumn",
+        name: "Golden",
+        color: 'gold',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 12, label: "Kedah" },
+        { y: 41, label: "Pulau Pinang" },
+        { y: 0, label: "Kelantan" },
+        { y: 4, label: "Terengganu" },
+        { y: 3, label: "Pahang" },
+        { y: 17, label:"Perak" },
+        { y: 550, label: "Selangor" },
+        { y: 273, label: "Kuala Lumpur" },
+        { y: 10, label: "Negeri Sembilan" },
+        { y: 9, label: "Melaka" },
+        { y: 27, label: "Johor" },
+        { y: 7, label: "Labuan"},
+        { y: 0, label: "Sabah" },
+        { y: 0, label: "Sarawak" }
+        ]
+      }, {
+        type: "stackedColumn",
+        name: "Yellow",
+        color: 'yellow',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 1, label: "Kedah" },
+        { y: 32, label: "Pulau Pinang" },
+        { y: 0, label: "Kelantan" },
+        { y: 5, label: "Terengganu" },
+        { y: 3, label: "Pahang" },
+        { y: 13, label:"Perak" },
+        { y: 294, label: "Selangor" },
+        { y: 234, label: "Kuala Lumpur" },
+        { y: 12, label: "Negeri Sembilan" },
+        { y: 5, label: "Melaka" },
+        { y: 29, label: "Johor" },
+        { y: 0, label: "Labuan"},
+        { y: 5, label: "Sabah" },
+        { y: 1, label: "Sarawak" }
+        ]
+      }, {
+        type: "stackedColumn",
+        name: "Cream",
+        color: 'beige',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 7, label: "Kedah" },
+        { y: 48, label: "Pulau Pinang" },
+        { y: 2, label: "Kelantan" },
+        { y: 2, label: "Terengganu" },
+        { y: 3, label: "Pahang" },
+        { y: 37, label:"Perak" },
+        { y: 525, label: "Selangor" },
+        { y: 204, label: "Kuala Lumpur" },
+        { y: 19, label: "Negeri Sembilan" },
+        { y: 8, label: "Melaka" },
+        { y: 27, label: "Johor" },
+        { y: 2, label: "Labuan"},
+        { y: 0, label: "Sabah" },
+        { y: 0, label: "Sarawak" }
+        ]
+      }, {
+        type: "stackedColumn",
+        name: "Gray",
+        color: 'grey',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 2, label: "Kedah" },
+        { y: 30, label: "Pulau Pinang" },
+        { y: 3, label: "Pahang" },
+        { y: 1, label: "Kelantan" },
+        { y: 4, label: "Terengganu" },
+        { y: 15, label:"Perak" },
+        { y: 380, label: "Selangor" },
+        { y: 206, label: "Kuala Lumpur" },
+        { y: 10, label: "Negeri Sembilan" },
+        { y: 5, label: "Melaka" },
+        { y: 26, label: "Johor" },
+        { y: 0, label: "Labuan"},
+        { y: 2, label: "Sabah" },
+        { y: 0, label: "Sarawak" }
+        ]
+        
+      }, {
+        type: "stackedColumn",
+        name: "White",
+        color: 'white',
+        showInLegend: true,
+         dataPoints: [
+        { y: 0, label: "Perlis" },
+        { y: 3, label: "Kedah" },
+        { y: 46, label: "Pulau Pinang" },
+        { y: 9, label: "Pahang" },
+        { y: 3, label: "Kelantan" },
+        { y: 0, label: "Terengganu" },
+        { y: 11, label:"Perak" },
+        { y: 373, label: "Selangor" },
+        { y: 169, label: "Kuala Lumpur" },
+        { y: 11, label: "Negeri Sembilan" },
+        { y: 12, label: "Melaka" },
+        { y: 30, label: "Johor" },
+        { y: 0, label: "Labuan"},
+        { y: 0, label: "Sabah" },
+        { y: 0, label: "Sarawak" }
+        ]
+      }
+      ]
+    });
+  colorchart.render();    
+}
+
+
 function Plotchart(sample){
-  var chart = new CanvasJS.Chart("chartContainer", {
+  var plotchart = new CanvasJS.Chart("plotchartContainer", {
     animationEnabled: true,
     theme: "light2",
     title: {
       text: "Pet Adoption Data By Area"
     },
     axisX: {
-      valueFormatString: "######"
+      valueFormatString: "##",
+      title: "Postal Area Numbers in Malaysia"
     },
     axisY: {
-      prefix: "",
+      title: "Number of Adoptions",
+      tickColor: "#B6B1A8",
       labelFormatter: addSymbols
     },
     toolTip: {
@@ -98,7 +278,7 @@ function Plotchart(sample){
       type: "column",
       name: "Adoptions",
       showInLegend: true,
-      xValueFormatString: "######",
+      xValueFormatString: "##",
       yValueFormatString: "#,##0",
       dataPoints: [
         { x: 02, y: 20000, indexLabel: "Perlis" },
@@ -167,7 +347,7 @@ function Plotchart(sample){
       ]
     }]
   });
-  chart.render();
+  plotchart.render();
   
   function addSymbols(e) {
     var suffixes = ["", "K", "M", "B"];
@@ -186,7 +366,7 @@ function Plotchart(sample){
     } else {
       e.dataSeries.visible = true;
     }
-    e.chart.render();
+    e.plotchart.render();
   }
 }
 
@@ -201,7 +381,7 @@ function optionChanged(newSample) {
   var slider = document.getElementById("myRange");
   var selector = document.getElementById("selDataset");
   var slidervalue = slider.value;
-  output.innerHTML = slidervalue; // Display the default slider value
+  //output.innerHTML = slidervalue; // Display the default slider value
   console.log("optionchanged detected and new sample selected")
   if (newSample == slidervalue) {
     console.log("new sample: " + selector.value + "," + newSample)} 
@@ -210,6 +390,7 @@ function optionChanged(newSample) {
   buildMetadata(newSample);
 
   //Update the scatter plot for the new sample selected.
+  Colorchart(newSample);
   Plotchart(newSample);
 }
 
