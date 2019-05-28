@@ -73,7 +73,7 @@ def sample_metadata(attribute, sample):
 
 
 
-@app.route("/Adoptions")
+@app.route("/api/v1.0/Adoptions")
 def Adoptions():
     """Return a list of adoption metadata."""
 
@@ -84,7 +84,7 @@ def Adoptions():
 def API():
     """Return API details."""
 
-    return jsonify("Welcome to the API Page!")
+    return render_template("APIv1.0.html")
 
 @app.route("/api/v1.0/Colors")
 def Pet_Colors():
