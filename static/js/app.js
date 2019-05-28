@@ -15,7 +15,7 @@ function init() {
   console.log("Initialising...")
 
   var selector =document.getElementById("selDataset");
-  Plotly.d3.json("/Adoptions",function(error,response){
+  Plotly.d3.json("/api/v1.0/Adoptions",function(error,response){
     if(error) console.warn(error);
     var dropdown_select = Plotly.d3.select("#selDataset");
     for(var i=0;i<response.length;i++){
