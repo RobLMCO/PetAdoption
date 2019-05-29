@@ -80,6 +80,12 @@ def Adoptions():
     # Return a list of the column adoptions 
     return jsonify(list(train_df.columns)[2:])
 
+@app.route("/api/v1.0/Research")
+def Research():
+    """Return the research render_template"""
+
+    return render_template("__results__.html")
+
 @app.route("/api/v1.0")
 def API():
     """Return API details."""
