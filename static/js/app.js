@@ -78,7 +78,7 @@ function Colorchart(sample){
       animationEnabled: true,
       theme: "light2",
       title:{
-      text: "Adoptions by Color"
+      text: "Pet Adoptions by Color"
       },
       axisX: {
       title: "Postal Area Names in Malaysia"
