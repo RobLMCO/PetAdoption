@@ -63,7 +63,7 @@ def sample_metadata(attribute, sample):
     if (attribute == "Health"): return jsonify(attribute, 3, sample)
     if (attribute == "Quantity"): return jsonify(attribute, 20, sample)    
     if (attribute == "Fee"): return jsonify(attribute, 3000, sample)
-    if (attribute == "State"): return jsonify(attribute, 41415, sample)
+    if (attribute == "State"): return jsonify(attribute, 95, sample)
     if (attribute == "RescuerID"): return jsonify(attribute, str(len(train_df)), sample)    
     if (attribute == "VideoAmt"): return jsonify(attribute, 8, sample)
     if (attribute == "Description"): return jsonify(attribute, str(len(train_df)), sample)
@@ -85,6 +85,27 @@ def API():
     """Return API details."""
 
     return render_template("APIv1.0.html")
+
+@app.route("/api/v1.0/Postcodes")
+def Pet_Postcodes():
+
+    try:
+       result = engine.execute("SELECT StateID, StateName from state_labels")
+    except:
+        print_error(f":: Could not connect!")
+    return jsonify("Pet States:", str(len(postcode_df.StateID)), list(postcode_df.StateName), list(postcode_df.LatLong))
+    
+@app.route("/api/v1.0/postcode/<sample>")
+def Pet_Postcode(sample):
+    """Return the MetaData for a given sample."""
+
+    pet_state = str(int(sample) - 1) + ' < StateID < ' + str(int(sample) + 1)
+
+    try:
+        result = engine.execute("SELECT StateName from state_labels where StateID = " + str(sample))
+    except:
+        print_error(f":: Could not connect!")
+    return jsonify("Pet State:", list(postcode_df.query(pet_state).StateID), list(postcode_df.query(pet_state).StateName), list(postcode_df.query(pet_state).LatLong))
 
 @app.route("/api/v1.0/Colors")
 def Pet_Colors():
