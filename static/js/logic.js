@@ -1,5 +1,10 @@
 function mapchart(sample) {
-// Create a map object
+
+// Function to determine marker size based on population
+function markerSize(adoptions) {
+  return adoptions / 1;
+}
+  // Create a map object
 var myMap = L.map("map", {
   center: [4.2105, 101.9758],
   zoom: 4
