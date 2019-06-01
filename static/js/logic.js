@@ -1,4 +1,4 @@
-function mapchart(sample) {
+//function mapchart(sample) {
 // Create a map object
 var myMap = L.map("map", {
   center: [4.2105, 101.9758],
@@ -83,4 +83,4 @@ for (var i = 0; i < StateNames.length; i++) {
     .bindPopup("<h1>" + StateName.name + "</h1>")
     .addTo(myMap);
 }
-}
+//}
