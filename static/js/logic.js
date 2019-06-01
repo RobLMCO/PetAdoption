@@ -110,6 +110,5 @@ for (var i = 0; i < locations.length; i++) {
       color: "white",
       fillColor: "white",
       radius: markerSize(locations[i].adoptions)
-    })
-  );
+    }).addTo(myMap));
   }}
