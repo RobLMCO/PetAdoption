@@ -44,6 +44,10 @@ engine = create_engine("sqlite:///pet_adoptions.sqlite", echo=False)
 def index():
     """Return the homepage."""
     return render_template("index.html")
+@app.route("/petAdoption.html")
+def petAdoption():
+    """Return the homepage."""
+    return render_template("petAdoption.html")
 
 @app.route("/metadata/<attribute>,<sample>")
 def sample_metadata(attribute, sample):
